@@ -5,11 +5,12 @@ This plugin will highlight each player in brown if they are next up in the orb o
 ## Important Usage Details
 
 The plugin needs you to input whether Blowing Mud is on on the side panel. It will default to off, but you can change it to Blowing Mud by choosing "2 Poopers"
+
 ![](https://imgur.com/MVe3Tf4.png)
 
 ## How It Works
 
-Once combat starts with any NPC, the plugin will query the wiki to get a list of possible drops. (Some are filtered due to no one ever wanting them). In the future, it will be possible to filter items you'd like to see in your 'Bank Log'
+Upon entering Kephri, orbs will highlight and player models will be outlined based on who should be next to poop. The orbs and highlights will rotate each time a poop happens (even if only the flies show up).
 ![](https://imgur.com/eNB4fZq.png)
 ![](https://imgur.com/GURZSzy.png)
 
