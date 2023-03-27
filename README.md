@@ -1,27 +1,24 @@
-# NPC Collection Log
+# Who's Gonna Poop
 
-This plugin shows a panel when you initiate combat with any NPC, showing information about which items are possible to receive from them, and which ones you've already got in your collection log, or in your bank.
+This plugin will highlight each player in brown if they are next up in the orb order to poop at Kephri.
 
 ## Important Usage Details
 
-This plugin depends on collectionlog.net, which integrates with RuneLite through the Collection Log plugin.
-Information here (https://github.com/evansloan/collection-log)
+The plugin needs you to input whether Blowing Mud is on on the side panel. It will default to off, but you can change it to Blowing Mud by choosing "2 Poopers"
 
-Just like with the Collection Log plugin, it requires you to open the collection log and look at the tabs. If you already are using the Collection Log plugin, you won't have to do anything.
+![](https://imgur.com/MVe3Tf4.png)
 
-## How To Use
+## How It Works
 
+Upon entering Kephri, orbs will highlight and player models will be outlined based on who should be next to poop. The orbs and highlights will rotate each time a poop happens (even if only the flies show up).
+![](https://imgur.com/eNB4fZq.png)
+![](https://imgur.com/GURZSzy.png)
 
+## Known Limitations
 
-Once combat starts with any NPC, the plugin will query the wiki to get a list of possible drops. (Some are filtered due to no one ever wanting them). In the future, it will be possible to filter items you'd like to see in your 'Bank Log'
-![](https://imgur.com/H0XIkSl.png)
-![](https://imgur.com/pEGhYq8.png)
-
-You can update the highlight colors, or even set them to transparent here:
-
-![](https://imgur.com/BPeol2s.png)
+If every player doesn't begin combat with Kephri before the first poop, it will de-sync the orbs. I'm trying to come up with a solution for this.
 
 ## Something Broken?
 
-If you've experienced an issue with the plugin, or have a recommendation on how to improve it, please [create an issue](https://github.com/ElOsoGroso/NPCCollectionLog/issues/new).
+If you've experienced an issue with the plugin, or have a recommendation on how to improve it, please [create an issue](https://github.com/ElOsoGroso/WhosGonnaPoop/issues/new).
 
