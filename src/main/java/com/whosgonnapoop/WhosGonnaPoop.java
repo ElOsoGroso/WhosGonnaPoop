@@ -31,8 +31,8 @@ import static java.lang.Math.max;
 @Slf4j
 @PluginDescriptor(
 		name = "Whos Gonna Poop",
-		description = "When entering combat with an NPC, a display of the possible drops and which ones you're missing will appear",
-		tags = {"display", "overlay", "collection", "log"}
+		description = "A plugin to show who's gonna poop next in Kephri.",
+		tags = {"poop", "kephri", "toa", "tombs","amascut"}
 )
 public class WhosGonnaPoop extends Plugin
 {
