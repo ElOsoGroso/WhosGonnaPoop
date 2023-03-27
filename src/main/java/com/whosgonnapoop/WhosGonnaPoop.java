@@ -257,7 +257,7 @@ public class WhosGonnaPoop extends Plugin
 	{
 		//We're starting up another raid, reset the values
 		if(e.getGroupId() == 772) {
-			log.info("Resetting playerlists after raid restart");
+//			log.info("Resetting playerlists after raid restart");
 			if (playerArrayList != null) playerArrayList.clear();
 			if (currentPoopIndexes != null) currentPoopIndexes.clear();
 			if (invalidOrbIndexes != null) invalidOrbIndexes.clear();
