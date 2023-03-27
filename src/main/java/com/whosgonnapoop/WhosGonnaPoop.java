@@ -197,12 +197,12 @@ public class WhosGonnaPoop extends Plugin
 		maxPWI = traverseOrbs(max);
 		minPWI = traverseOrbs(min);
 		if(minPWI !=null && howManyPoopers ==2){
-			log.info("Added minPooper of " + minPWI.name + ", " +minPWI.index);
+//			log.info("Added minPooper of " + minPWI.name + ", " +minPWI.index);
 			currentPoopIndexes.add(minPWI.index);
 		}
 		if(maxPWI !=null){
 			currentPoopIndexes.add(maxPWI.index);
-			log.info("Added maxPooper of " + maxPWI.name + ", " +maxPWI.index);
+//			log.info("Added maxPooper of " + maxPWI.name + ", " +maxPWI.index);
 		}
 	}
 	public void resetPoopers(){
@@ -294,9 +294,9 @@ public class WhosGonnaPoop extends Plugin
 				boolean skipEverybodyPoops = false;
 				Player currentPooper = (Player) e.getActor();
 				if ((currentPooper.getGraphic() == 2146 || currentPooper.getGraphic() == 245)) {
-					log.info("Phase count: " + phaseCount);
+//					log.info("Phase count: " + phaseCount);
 					log.info(currentPooper.getName() + (currentPooper.getGraphic() == 2146 ? " got flies" : " is poopy"));
-					log.info("Seconds from last poop time: " + Long.toString((System.currentTimeMillis() - lastPoopedTime) / 1000));
+//					log.info("Seconds from last poop time: " + Long.toString((System.currentTimeMillis() - lastPoopedTime) / 1000));
 					//if we're in phase 2 and the graphic change happened when the kephri health is 0, we dont' care about it (everybody poops)
 					if(phaseCount == 2 && (client.getNpcs().stream().filter(x->x.getId() == KEPHRI_ID).findFirst().isPresent() &&
 							client.getNpcs().stream().filter(x->x.getId() ==KEPHRI_ID).findFirst().get().getHealthRatio() == 0)){
@@ -319,24 +319,24 @@ public class WhosGonnaPoop extends Plugin
 					}
 					//if they have already pooped in this rotation, skip them (give them 4 seconds from last pooped time)
 					if (triggerOrbSwap) {
-						log.info("We'd be swapping orbs");
+//						log.info("We'd be swapping orbs");
 						int min = Collections.min(currentPoopIndexes);
 						int max = Collections.max(currentPoopIndexes);
-						log.info("Just pooped:");
-						log.info("min = " + min + ": (" + playerArrayList.stream().filter(x->x.index== min).findFirst().get().name + ")");
-						log.info("max = " + max + ": (" + playerArrayList.stream().filter(x->x.index== max).findFirst().get().name + ")");
+//						log.info("Just pooped:");
+//						log.info("min = " + min + ": (" + playerArrayList.stream().filter(x->x.index== min).findFirst().get().name + ")");
+//						log.info("max = " + max + ": (" + playerArrayList.stream().filter(x->x.index== max).findFirst().get().name + ")");
 						if (playerArrayList.size() == howManyPoopers) {
-							log.info("returning");
+//							log.info("returning");
 							return; //We don't want to do anything to the indexes if it's 1 or 2 people and it matches the current pooper count
 						}
 						updatePoopIndexes(min,max);
-						log.info("Pooper list");
-						for(int i : currentPoopIndexes){
-							log.info(Integer.toString(i));
-						}
+//						log.info("Pooper list");
+//						for(int i : currentPoopIndexes){
+//							log.info(Integer.toString(i));
+//						}
 					} else {
 						log.info("Skipping swap on this pooper: " + currentPooper.getName());
-						log.info("Time from last poop: " + Long.toString((System.currentTimeMillis() - lastPoopedTime) / 1000));
+//						log.info("Time from last poop: " + Long.toString((System.currentTimeMillis() - lastPoopedTime) / 1000));
 					}
 				}
 			}
@@ -440,8 +440,8 @@ public class WhosGonnaPoop extends Plugin
 	public void onPlayerDespawned(PlayerDespawned e)
 	{
 		if(isinKephri(e.getPlayer())){
- 			log.info("Player that despawned:");
-			log.info(e.getActor().getName());
+// 			log.info("Player that despawned:");
+//			log.info(e.getActor().getName());
 		}
 	}
 

@@ -19,7 +19,6 @@ public class WhosGonnaPoopOverlay extends Overlay {
     private final Client client;
     private final ModelOutlineRenderer modelOutlineRenderer;
 
-
     @Inject
     public WhosGonnaPoopOverlay(WhosGonnaPoop plugin, WhosGonnaPoopConfig config, Client client, ItemManager itemManager, InfoBoxManager infoBoxManager, TooltipManager tooltipManager, ModelOutlineRenderer modelOutlineRenderer) {
         this.plugin = plugin;
@@ -27,15 +26,6 @@ public class WhosGonnaPoopOverlay extends Overlay {
         this.client = client;
         this.modelOutlineRenderer = modelOutlineRenderer;
     }
-    public static BufferedImage resizeImage(BufferedImage image, int newWidth, int newHeight)
-    {
-        BufferedImage scaledImage = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_ARGB);
-        Graphics g = scaledImage.createGraphics();
-        g.drawImage(image, 0, 0, newWidth, newHeight, null);
-        g.dispose();
-        return scaledImage;
-    }
-
     @Override
     public Dimension render(Graphics2D graphics) {
         for (Player player : client.getPlayers())

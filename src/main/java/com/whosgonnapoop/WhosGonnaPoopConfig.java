@@ -36,25 +36,12 @@ public interface WhosGonnaPoopConfig extends Config
 {
 	String MAIN_GROUP = "whosgonnapoop";
 
-
-//	@Alpha
-//	@ConfigItem(
-//			keyName = "itemBackgroundColor",
-//			name = "Background color",
-//			description = "Configures the color of the non-collection-log items"
-//	)
-//	default Color itemBackgroundColor()
-//	{
-//		return Color.BLACK;
-//	}
-
-
 	@ConfigItem(
 			keyName = "BlowingMudOn",
 			name = "Blowing Mud On?",
 			description = "Sets the sort order of the set colors"
 	)
-	default boolean sortRedFirst()
+	default boolean blowingMudOn()
 	{
 		return true;
 	}
