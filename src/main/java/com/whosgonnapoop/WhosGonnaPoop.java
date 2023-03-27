@@ -271,7 +271,7 @@ public class WhosGonnaPoop extends Plugin
 		if(e.getActor() instanceof NPC && ((NPC)e.getActor()).getId() == KEPHRI_ID){
 			if (e.getActor().getAnimation() == 9579){
 				phaseCount++; //Phasing up
-				log.info("Phasing count up " + phaseCount);
+//				log.info("Phasing count up " + phaseCount);
 			}
 		}
 
