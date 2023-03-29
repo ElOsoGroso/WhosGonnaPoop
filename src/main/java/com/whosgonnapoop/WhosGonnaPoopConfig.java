@@ -45,4 +45,14 @@ public interface WhosGonnaPoopConfig extends Config
 	{
 		return true;
 	}
+
+	    @ConfigItem(
+            keyName = "nextPhaseHotkey",
+            name = "Next Phase",
+            description = "Increment the poop orbs",
+            position = 1
+    )
+    default Keybind nextPhaseHotkey() {
+        return Keybind.NOT_SET;
+    }
 }

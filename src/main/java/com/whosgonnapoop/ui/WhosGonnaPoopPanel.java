@@ -18,8 +18,9 @@ public class WhosGonnaPoopPanel extends PluginPanel
 
     private final JPanel contentPanel;
 
-    private ResetButton clearButton;
-    private ResetButton clearButton2;
+    private ResetButton onePooper;
+    private ResetButton twoPooper;
+    private ResetButton advanceButton;
 
     private JTextArea createTextArea(String text)
     {
@@ -49,23 +50,32 @@ public class WhosGonnaPoopPanel extends PluginPanel
         add(title, BorderLayout.NORTH);
         create1Button();
         create2Button();
+        createAdvanceButton();
         add(contentPanel, BorderLayout.CENTER);
     }
 
     private void create1Button()
     {
-        clearButton = new ResetButton("1 Pooper");
-        clearButton.setPreferredSize(new Dimension(PANEL_WIDTH, 30));
-        clearButton.addMouseButton1PressedHandler(() -> {plugin.howManyPoopers = 1; plugin.resetPoopers();});
+        onePooper = new ResetButton("1 Pooper");
+        onePooper.setPreferredSize(new Dimension(PANEL_WIDTH, 30));
+        onePooper.addMouseButton1PressedHandler(() -> {plugin.howManyPoopers = 1; plugin.resetPoopers();});
         contentPanel.add(clearButton);
 
     }
     private void create2Button()
     {
-        clearButton2 = new ResetButton("2 Poopers");
-        clearButton2.setPreferredSize(new Dimension(PANEL_WIDTH, 30));
-        clearButton2.addMouseButton2PressedHandler(() -> {plugin.howManyPoopers = 2; plugin.resetPoopers();});
+        twoPooper = new ResetButton("2 Poopers");
+        twoPooper.setPreferredSize(new Dimension(PANEL_WIDTH, 30));
+        twoPooper.addMouseButton2PressedHandler(() -> {plugin.howManyPoopers = 2; plugin.resetPoopers();});
         contentPanel.add(clearButton2);
+
+    }
+    private void createAdvanceButton()
+    {
+        advanceButton = new ResetButton("Advance Poopers (" + config.nextPhaseHotkey.toString()+")");
+        advanceButton.setPreferredSize(new Dimension(PANEL_WIDTH, 30));
+        advanceButton.addAdvanceButtonHandler(() -> {triggerPoopSwap();});
+        contentPanel.add(advanceButton);
 
     }
 

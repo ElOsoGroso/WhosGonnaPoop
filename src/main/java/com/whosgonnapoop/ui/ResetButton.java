@@ -40,4 +40,18 @@ public class ResetButton extends JButton
             }
         });
     }
+        public void addAdvanceButtonHandler(Runnable callback)
+    {
+        addMouseListener(new MouseAdapter()
+        {
+            @Override
+            public void mousePressed(MouseEvent e)
+            {
+                if (e.getButton() == MouseEvent.BUTTON1)
+                {
+                    callback.run();
+                }
+            }
+        });
+    }
 }
