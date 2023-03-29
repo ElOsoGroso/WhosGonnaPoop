@@ -8,7 +8,7 @@ This plugin helps you to keep track of who will poop next based on the orb order
 
 You need to set the amount of poopers (whether blowing mud is on or off). This will determine how many orbs shift when the hotkey is pressed.
 
-Upon entering Kephri, orbs will highlight based on who should be next to poop. The orbs and can be rotating with a hotkey or clicking a button on the side panel each time a poop happens.
+Upon entering Kephri, orbs will highlight based on who should be next to poop. The orbs and can be rotated with a hotkey or clicking a button on the side panel each time a poop happens.
 
 ![](https://imgur.com/gjPCadf.png)
 
