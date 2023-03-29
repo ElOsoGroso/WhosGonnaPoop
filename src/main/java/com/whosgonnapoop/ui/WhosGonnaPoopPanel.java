@@ -8,6 +8,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 import com.whosgonnapoop.WhosGonnaPoop;
+import com.whosgonnapoop.WhosGonnaPoopConfig;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.client.ui.PluginPanel;
 
@@ -15,6 +16,7 @@ import net.runelite.client.ui.PluginPanel;
 public class WhosGonnaPoopPanel extends PluginPanel
 {
     private final WhosGonnaPoop plugin;
+    private final WhosGonnaPoopConfig config;
 
     private final JPanel contentPanel;
 
@@ -35,10 +37,11 @@ public class WhosGonnaPoopPanel extends PluginPanel
         return textArea;
     }
     @Inject
-    public WhosGonnaPoopPanel(WhosGonnaPoop plugin)
+    public WhosGonnaPoopPanel(WhosGonnaPoop plugin, WhosGonnaPoopConfig  config)
     {
         super(false);
         this.plugin = plugin;
+        this.config = config;
 
         JLabel title = new JLabel("Who's Gonna Poop?");
         title.setBorder(new EmptyBorder(0, 0, BORDER_OFFSET, 0));
@@ -59,7 +62,7 @@ public class WhosGonnaPoopPanel extends PluginPanel
         onePooper = new ResetButton("1 Pooper");
         onePooper.setPreferredSize(new Dimension(PANEL_WIDTH, 30));
         onePooper.addMouseButton1PressedHandler(() -> {plugin.howManyPoopers = 1; plugin.resetPoopers();});
-        contentPanel.add(clearButton);
+        contentPanel.add(onePooper);
 
     }
     private void create2Button()
@@ -67,16 +70,20 @@ public class WhosGonnaPoopPanel extends PluginPanel
         twoPooper = new ResetButton("2 Poopers");
         twoPooper.setPreferredSize(new Dimension(PANEL_WIDTH, 30));
         twoPooper.addMouseButton2PressedHandler(() -> {plugin.howManyPoopers = 2; plugin.resetPoopers();});
-        contentPanel.add(clearButton2);
+        contentPanel.add(twoPooper);
 
     }
     private void createAdvanceButton()
     {
-        advanceButton = new ResetButton("Advance Poopers (" + config.nextPhaseHotkey.toString()+")");
+        advanceButton = new ResetButton("Advance Orbs (Hotkey: " + config.nextPhaseHotkey().toString()+")");
         advanceButton.setPreferredSize(new Dimension(PANEL_WIDTH, 30));
-        advanceButton.addAdvanceButtonHandler(() -> {triggerPoopSwap();});
+        advanceButton.addAdvanceButtonHandler(() -> {plugin.triggerPoopSwap();});
         contentPanel.add(advanceButton);
 
+    }
+    public void updateAdvanceButton()
+    {
+        advanceButton.setText("Advance Orbs (Hotkey: " + config.nextPhaseHotkey().toString()+")");
     }
 
 

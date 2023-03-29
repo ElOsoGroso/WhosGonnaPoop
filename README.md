@@ -1,22 +1,21 @@
 # Who's Gonna Poop
 
-This plugin will highlight each player in brown if they are next up in the orb order to poop at Kephri.
+This plugin helps you to keep track of who will poop next based on the orb order (manually shifted with a hot key).
 
-## Important Usage Details
 
-The plugin needs you to input whether Blowing Mud is on on the side panel. It will default to off, but you can change it to Blowing Mud by choosing "2 Poopers"
-
-![](https://imgur.com/MVe3Tf4.png)
 
 ## How It Works
 
-Upon entering Kephri, orbs will highlight and player models will be outlined based on who should be next to poop. The orbs and highlights will rotate each time a poop happens (even if only the flies show up).
-![](https://imgur.com/eNB4fZq.png)
-![](https://imgur.com/GURZSzy.png)
+You need to set the amount of poopers (whether blowing mud is on or off). This will determine how many orbs shift when the hotkey is pressed.
 
-## Known Limitations
+Upon entering Kephri, orbs will highlight based on who should be next to poop. The orbs and can be rotating with a hotkey or clicking a button on the side panel each time a poop happens.
 
-If every player doesn't begin combat with Kephri before the first poop, it will de-sync the orbs. I'm trying to come up with a solution for this.
+![](https://imgur.com/gjPCadf.png)
+
+![](https://imgur.com/sFpEIOS.png)
+
+![](https://imgur.com/ltmQTqm.png)
+
 
 ## Something Broken?
 

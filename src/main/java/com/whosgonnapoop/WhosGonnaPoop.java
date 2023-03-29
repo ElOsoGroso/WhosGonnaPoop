@@ -18,12 +18,15 @@ import net.runelite.api.widgets.Widget;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.events.ClientShutdown;
+import net.runelite.client.events.ConfigChanged;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.ui.ClientToolbar;
 import net.runelite.client.ui.NavigationButton;
 import net.runelite.client.ui.overlay.OverlayManager;
+import net.runelite.client.util.HotkeyListener;
 import net.runelite.client.util.ImageUtil;
+import net.runelite.client.input.KeyManager;
 
 import static java.lang.Math.abs;
 import static java.lang.Math.max;
@@ -71,7 +74,7 @@ public class WhosGonnaPoop extends Plugin
 	final int KEPHRI_ID = 11719;
 	@Getter
 	public int howManyPoopers;
-	private HotkeyListener hotkey = new HotkeyListener();
+	private HotkeyListener hotkey;
 
 	@Provides
 	WhosGonnaPoopConfig provideConfig(ConfigManager configManager)
@@ -90,11 +93,9 @@ public class WhosGonnaPoop extends Plugin
 		currentPoopIndexes = new ArrayList<Integer>();
 		playerArrayList = new ArrayList<PlayerWidgetIndex>();
 		invalidOrbIndexes = new ArrayList<Integer>();
-		lastPoopedTime = System.currentTimeMillis();
 		howManyPoopers = 1;
-		phaseCount = 0;
 
-		panel = new WhosGonnaPoopPanel(this);
+		panel = new WhosGonnaPoopPanel(this,this.config);
 
 		navigationButton = NavigationButton
 				.builder()
@@ -268,9 +269,12 @@ public class WhosGonnaPoop extends Plugin
 			if (playerArrayList != null) playerArrayList.clear();
 			if (currentPoopIndexes != null) currentPoopIndexes.clear();
 			if (invalidOrbIndexes != null) invalidOrbIndexes.clear();
-			phaseCount = 0;
-			lastPoopedTime = System.currentTimeMillis();
 		}
+	}
+	@Subscribe
+	public void onConfigChanged(ConfigChanged e)
+	{
+		panel.updateAdvanceButton();
 	}
 
 	public void syncUsers(){

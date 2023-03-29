@@ -26,10 +26,8 @@
 package com.whosgonnapoop;
 
 import java.awt.Color;
-import net.runelite.client.config.Alpha;
-import net.runelite.client.config.Config;
-import net.runelite.client.config.ConfigGroup;
-import net.runelite.client.config.ConfigItem;
+
+import net.runelite.client.config.*;
 
 @ConfigGroup(WhosGonnaPoopConfig.MAIN_GROUP)
 public interface WhosGonnaPoopConfig extends Config
@@ -37,16 +35,6 @@ public interface WhosGonnaPoopConfig extends Config
 	String MAIN_GROUP = "whosgonnapoop";
 
 	@ConfigItem(
-			keyName = "BlowingMudOn",
-			name = "Blowing Mud On?",
-			description = "Sets the sort order of the set colors"
-	)
-	default boolean blowingMudOn()
-	{
-		return true;
-	}
-
-	    @ConfigItem(
             keyName = "nextPhaseHotkey",
             name = "Next Phase",
             description = "Increment the poop orbs",
